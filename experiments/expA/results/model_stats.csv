@@ -1,0 +1,5 @@
+model,student,params,macs,flops
+Teacher,TeacherCNN,1682954,16510464,33020928
+S,StudentCNN,52138,333056,666112
+XS,StudentCNNExs,13242,97536,195072
+XXS,StudentCNNExs2,3418,31520,63040

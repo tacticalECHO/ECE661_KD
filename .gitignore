@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+runs/
+# result CSVs are committed as raw data; only local backups of summary.csv are not
+*_backup_*.csv
+logs/
+*.pt
+.vscode/
+.idea/
+
+# AI-generated reference implementation: local cross-checking only, never committed
+reference/
+
+# downloaded papers (copyrighted; keep local)
+papers/
+
+# local batch runners (no directory prefix, so this still applies after moving to experiments/expA)
+run_remaining.py
+run_dropout.py
