@@ -34,7 +34,9 @@ experiments/expA/
 ├── check_kd.py                  # sanity check of kd_loss at several temperatures
 ├── check_gpu.py                 # forward/backward smoke test on the GPU
 ├── FLOPs.py                     # parameter and FLOP counts -> results/model_stats.csv
-└── results/                     # per-run training logs and summary tables (CSV)
+├── plot_results.py              # figures/*.pdf and *.png from the result CSVs
+├── results/                     # per-run training logs and summary tables (CSV)
+└── figures/                     # generated figures
 ```
 
 Each script adds the repository root to `sys.path` and changes the working directory to
@@ -190,6 +192,24 @@ Columns of the summary tables:
 Naming note: the earliest runs were logged before the `--student` option existed. Their names
 have no `_StudentCNN` suffix (for example `student_kd_T4_alpha0.9_seed42` and
 `student_ce_seed42_exclude_1`). The `student` column is filled for every row.
+
+## Figures
+
+`python plot_results.py` reads only the CSVs in `results/` and writes each figure to
+`figures/` as a PDF (for the report) and as a 300-dpi PNG (for the poster). It checks that every
+plotted configuration has exactly the seeds 42, 123 and 456.
+
+| Figure | Contents | Source |
+|---|---|---|
+| `temperature_sweep` | Test errors vs. T for KD, with the CE mean ± sd as a band | `summary.csv` |
+| `training_curves` | Validation loss and accuracy per epoch: CE, CE + dropout 0.5, KD (T = 4) | `summary.csv` and `summary_dropout.csv` to find the runs, then each run's `<run_name>.csv` |
+| `missing_digit` | Digit-1 test accuracy, and test errors on the other nine digits | `summary.csv` (`acc_1`, `test_errors`) |
+| `capacity` | Test errors vs. student parameters for CE and KD (T = 4) | `summary.csv` |
+| `dropout` | Test errors for CE with or without student dropout, and KD with or without teacher dropout | `summary.csv`, `summary_dropout.csv` |
+
+Error bars show the sample standard deviation over the three seeds, and dots show the
+individual seeds. The errors on the other nine digits are computed as
+`test_errors − round((1 − acc_1) × 1135)`, because the MNIST test set has 1,135 images of digit 1.
 
 ## Results summary
 
