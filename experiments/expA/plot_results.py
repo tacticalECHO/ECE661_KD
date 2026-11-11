@@ -33,7 +33,7 @@ OMITTED_DIGIT = 1
 COLORS = {
     "kd": "#2a78d6",       # blue
     "ce": "#eb6834",       # orange
-    "kd_t20": "#1baf7a",   # aqua (second KD setting in the missing-digit figure)
+    "ce_dropout": "#1baf7a",  # aqua: CE with dropout in the student
 }
 INK = "#0b0b0b"
 INK_SECONDARY = "#52514e"
@@ -161,7 +161,7 @@ def fig_training_curves(rows):
     groups = [
         ("CE", COLORS["ce"], "-",
          select(rows, method="ce", student="StudentCNN", exclude_classes="", dropout="")),
-        ("CE + dropout 0.5", COLORS["ce"], ":",
+        ("CE + dropout 0.5", COLORS["ce_dropout"], "-",
          select(rows, method="ce", student="StudentCNNDropout", dropout="0.5")),
         ("KD, T = 4", COLORS["kd"], "-",
          select(rows, method="kd", student="StudentCNN", T=4.0, exclude_classes="",
@@ -201,7 +201,7 @@ def fig_missing_digit(rows):
          select(rows, method="ce", student="StudentCNN", exclude_classes=exc)),
         ("KD, T = 4", COLORS["kd"],
          select(rows, method="kd", student="StudentCNN", T=4.0, exclude_classes=exc)),
-        ("KD, T = 20", COLORS["kd_t20"],
+        ("KD, T = 20", COLORS["kd"],
          select(rows, method="kd", student="StudentCNN", T=20.0, exclude_classes=exc)),
     ]
     for label, _, g in groups:
@@ -276,9 +276,9 @@ def fig_dropout(rows):
     groups = [
         ("CE", "ce", select(rows, method="ce", student="StudentCNN", exclude_classes="",
                             dropout="")),
-        ("CE, student dropout 0.3", "ce",
+        ("CE, student dropout 0.3", "ce_dropout",
          select(rows, method="ce", student="StudentCNNDropout", dropout="0.3")),
-        ("CE, student dropout 0.5", "ce",
+        ("CE, student dropout 0.5", "ce_dropout",
          select(rows, method="ce", student="StudentCNNDropout", dropout="0.5")),
         ("KD, plain teacher", "kd",
          select(rows, method="kd", student="StudentCNN", T=4.0, exclude_classes="",
