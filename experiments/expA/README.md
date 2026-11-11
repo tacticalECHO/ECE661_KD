@@ -35,6 +35,7 @@ experiments/expA/
 ├── check_gpu.py                 # forward/backward smoke test on the GPU
 ├── FLOPs.py                     # parameter and FLOP counts -> results/model_stats.csv
 ├── plot_results.py              # figures/*.pdf and *.png from the result CSVs
+├── missing_confusion.py         # confusion matrices of the missing-digit students (needs checkpoints)
 ├── results/                     # per-run training logs and summary tables (CSV)
 └── figures/                     # generated figures
 ```
@@ -206,6 +207,16 @@ plotted configuration has exactly the seeds 42, 123 and 456.
 | `missing_digit` | Digit-1 test accuracy, and test errors on the other nine digits | `summary.csv` (`acc_1`, `test_errors`) |
 | `capacity` | Test errors vs. student parameters for CE and KD (T = 4) | `summary.csv` |
 | `dropout` | Test errors for CE with or without student dropout, and KD with or without teacher dropout | `summary.csv`, `summary_dropout.csv` |
+
+`python missing_confusion.py [--digit 1]` evaluates the checkpoints instead of reading CSVs.
+For CE, KD at T = 4 and KD at T = 20, it finds the three missing-digit runs in `summary.csv`
+and evaluates each seed's checkpoint on the full test set. It then sums the confusion matrices
+over the seeds and writes:
+
+- `results/confusion_missing1_{ce,kd_T4,kd_T20}.csv`: raw counts; rows are true digits and
+  columns are predicted digits.
+- `figures/confusion_missing1`: the row-normalized matrices, with the omitted digit's row
+  outlined.
 
 Error bars show the sample standard deviation over the three seeds, and dots show the
 individual seeds. The errors on the other nine digits are computed as

@@ -5,8 +5,7 @@ import os
 import sys
 from pathlib import Path
 
-# Shared code (models/, losses.py, utils.py) lives at the repo root; relative paths
-# (results/, checkpoints/, logs/) resolve inside experiments/expA from any working directory.
+
 EXP_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP_DIR.parents[1]))
 os.chdir(EXP_DIR)
