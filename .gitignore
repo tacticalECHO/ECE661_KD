@@ -16,6 +16,9 @@ reference/
 # downloaded papers (copyrighted; keep local)
 papers/
 
+# Experiment C development checks retained locally but excluded from submission
+experiments/expC/local_only/
+
 # local batch runners (no directory prefix, so this still applies after moving to experiments/expA)
 run_remaining.py
 run_dropout.py

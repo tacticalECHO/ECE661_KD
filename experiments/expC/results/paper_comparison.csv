@@ -1,0 +1,5 @@
+method,project_test_acc,project_sample_sd,project_trials,paper_test_acc,paper_trials,project_minus_paper_pp,protocol_note
+teacher,0.7865,,1,0.7942,5,-0.77,Project uses a fixed 45k/5k train/validation split and selects the best validation checkpoint; paper values use the authors' protocol.
+ce,0.7178,0.000529,3,0.725,5,-0.72,Project uses a fixed 45k/5k train/validation split and selects the best validation checkpoint; paper values use the authors' protocol.
+kd,0.729067,0.004474,3,0.7333,5,-0.4233,Project uses a fixed 45k/5k train/validation split and selects the best validation checkpoint; paper values use the authors' protocol.
+dkd,0.7512,0.004058,3,0.7632,5,-1.2,Project uses a fixed 45k/5k train/validation split and selects the best validation checkpoint; paper values use the authors' protocol.

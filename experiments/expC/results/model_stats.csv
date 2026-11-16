@@ -1,0 +1,3 @@
+role,architecture,params,macs,flops
+Teacher,ResNet32x4,7433860,1083040768,2166081536
+Student,ResNet8x4,1233540,177071104,354142208
