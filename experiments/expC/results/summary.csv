@@ -1,0 +1,17 @@
+run_name,method,teacher_arch,student_arch,T,kd_alpha,dkd_alpha,dkd_beta,warmup,optimizer,lr,lr_milestones,momentum,weight_decay,batch_size,epochs,seed,split_seed,best_epoch,best_val_acc,test_acc,test_errors,test_loss,params,teacher
+teacher_resnet32x4_best,teacher,ResNet32x4,,,,,,,sgd,0.05,150_180_210,0.9,0.0005,64,240,42,42,223,0.7824,0.7865,2135,0.9025168838500977,7433860,
+student_resnet8x4_ce_seed42_best,ce,,ResNet8x4,,,,,,sgd,0.05,150_180_210,0.9,0.0005,64,240,42,42,186,0.7252,0.718,2820,1.0413329158782958,1233540,
+student_resnet8x4_ce_seed123_best,ce,,ResNet8x4,,,,,,sgd,0.05,150_180_210,0.9,0.0005,64,240,123,42,218,0.726,0.7182,2818,1.0701525554656983,1233540,
+student_resnet8x4_ce_seed456_best,ce,,ResNet8x4,,,,,,sgd,0.05,150_180_210,0.9,0.0005,64,240,456,42,212,0.7278,0.7172,2828,1.067190812397003,1233540,
+student_resnet8x4_kd_T4_alpha0.9_seed42_best,kd,ResNet32x4,ResNet8x4,4.0,0.9,,,,sgd,0.05,150_180_210,0.9,0.0005,64,240,42,42,192,0.7346,0.73,2700,1.129552135848999,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_kd_T4_alpha0.9_seed123_best,kd,ResNet32x4,ResNet8x4,4.0,0.9,,,,sgd,0.05,150_180_210,0.9,0.0005,64,240,123,42,191,0.7298,0.733,2670,1.1271468792915345,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_kd_T4_alpha0.9_seed456_best,kd,ResNet32x4,ResNet8x4,4.0,0.9,,,,sgd,0.05,150_180_210,0.9,0.0005,64,240,456,42,192,0.7386,0.7242,2758,1.1376106466293334,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_tckd_T4_alpha1_warmup20_seed42_best,tckd,ResNet32x4,ResNet8x4,4.0,,1.0,,20,sgd,0.05,150_180_210,0.9,0.0005,64,240,42,42,185,0.6864,0.6817,3183,1.2988298830032348,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_nckd_T4_beta8_warmup20_seed42_best,nckd,ResNet32x4,ResNet8x4,4.0,,,8.0,20,sgd,0.05,150_180_210,0.9,0.0005,64,240,42,42,221,0.746,0.7437,2563,0.9474549866676331,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_dkd_T4_alpha1_beta8_warmup20_seed42_best,dkd,ResNet32x4,ResNet8x4,4.0,,1.0,8.0,20,sgd,0.05,150_180_210,0.9,0.0005,64,240,42,42,217,0.7586,0.7551,2449,0.9306331420898437,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_tckd_T4_alpha1_warmup20_seed123_best,tckd,ResNet32x4,ResNet8x4,4.0,,1.0,,20,sgd,0.05,150_180_210,0.9,0.0005,64,240,123,42,199,0.69,0.6872,3128,1.296543945121765,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_nckd_T4_beta8_warmup20_seed123_best,nckd,ResNet32x4,ResNet8x4,4.0,,,8.0,20,sgd,0.05,150_180_210,0.9,0.0005,64,240,123,42,215,0.7446,0.7431,2569,0.9356765250205994,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_dkd_T4_alpha1_beta8_warmup20_seed123_best,dkd,ResNet32x4,ResNet8x4,4.0,,1.0,8.0,20,sgd,0.05,150_180_210,0.9,0.0005,64,240,123,42,197,0.7574,0.7515,2485,0.9287893751144409,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_tckd_T4_alpha1_warmup20_seed456_best,tckd,ResNet32x4,ResNet8x4,4.0,,1.0,,20,sgd,0.05,150_180_210,0.9,0.0005,64,240,456,42,155,0.6812,0.6803,3197,1.2558425134658813,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_nckd_T4_beta8_warmup20_seed456_best,nckd,ResNet32x4,ResNet8x4,4.0,,,8.0,20,sgd,0.05,150_180_210,0.9,0.0005,64,240,456,42,227,0.75,0.7446,2554,0.9450887268066406,1233540,checkpoints/teacher_resnet32x4_best.pt
+student_resnet8x4_dkd_T4_alpha1_beta8_warmup20_seed456_best,dkd,ResNet32x4,ResNet8x4,4.0,,1.0,8.0,20,sgd,0.05,150_180_210,0.9,0.0005,64,240,456,42,198,0.7552,0.747,2530,0.9402339056968689,1233540,checkpoints/teacher_resnet32x4_best.pt
