@@ -1,0 +1,16 @@
+{
+  "epochs": 200,
+  "schedule_epochs": 200,
+  "batch_size": 128,
+  "optimizer": "sgd",
+  "lr": 0.1,
+  "momentum": 0.9,
+  "weight_decay": 0.0005,
+  "scheduler": "cosine",
+  "warmup_epochs": 10,
+  "min_lr": 0.0,
+  "seed": 42,
+  "split_seed": 42,
+  "augment": true,
+  "device": "cuda"
+}

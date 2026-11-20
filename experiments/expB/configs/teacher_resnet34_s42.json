@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "dataset": "cifar10",
+  "model_name": "resnet34",
+  "seed": 42,
+  "source_run_name": "teacher_resnet34_s42_20261116T041338Z_cd35d37c14_867a47",
+  "checkpoint": "checkpoints/teacher_resnet34_s42_aa89a5a55c45d775.pt",
+  "checkpoint_sha256": "aa89a5a55c45d7750dc200be2af34afeca156b1b42609c15b729820ffc47d48e",
+  "best_epoch": 196,
+  "completed_epochs": 200,
+  "validation": {
+    "loss": 0.17889997714022174,
+    "acc": 0.9624,
+    "errors": 188,
+    "n": 5000,
+    "per_class_acc": [
+      0.9692623019218445,
+      0.982421875,
+      0.951127827167511,
+      0.9256899952888489,
+      0.966029703617096,
+      0.9182879328727722,
+      0.976331353187561,
+      0.9639999866485596,
+      0.9841269850730896,
+      0.9860279560089111
+    ],
+    "per_class_errors": [
+      15,
+      9,
+      26,
+      35,
+      16,
+      42,
+      12,
+      18,
+      8,
+      7
+    ]
+  },
+  "test_evaluated": false,
+  "training_config": {
+    "config": "C:\\Users\\jacob\\Desktop\\ECE661\\ECE661_KD\\experiments\\expB\\configs\\cifar10_base.json",
+    "epochs": 200,
+    "schedule_epochs": 200,
+    "batch_size": 128,
+    "lr": 0.1,
+    "optimizer": "sgd",
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "scheduler": "cosine",
+    "warmup_epochs": 10,
+    "min_lr": 0.0,
+    "seed": 42,
+    "split_seed": 42,
+    "device": "cuda",
+    "augment": true,
+    "smoke": false,
+    "max_train_batches": null,
+    "max_val_batches": null,
+    "run_name": null,
+    "evaluate_test": false
+  },
+  "data": {
+    "classes": [
+      "airplane",
+      "automobile",
+      "bird",
+      "cat",
+      "deer",
+      "dog",
+      "frog",
+      "horse",
+      "ship",
+      "truck"
+    ],
+    "indices_sha256": "55ecb6cd4e1eb48274001018b26a797b833f72ae79a02b388e4874497445b43d",
+    "normalization": {
+      "mean": [
+        0.4916557112949346,
+        0.48233404786220047,
+        0.4466792311751089
+      ],
+      "std": [
+        0.24708115757171717,
+        0.24350869346103443,
+        0.26158066216751236
+      ],
+      "source": "Training subset pixels scaled to [0, 1]; population standard deviation"
+    }
+  },
+  "model_source_sha256": "2aca0a1d0376f8337fff72f145267fde6cf37c78a569a3298a5cb251e68d915b",
+  "environment": {
+    "torch": "2.8.0+cu126",
+    "torchvision": "0.23.0+cu126",
+    "cuda_build": "12.6",
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "device": "NVIDIA GeForce RTX 2080 Ti"
+  },
+  "frozen_at_utc": "2026-11-16T07:40:02.006844+00:00"
+}

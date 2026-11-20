@@ -1,0 +1,95 @@
+{
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "temperature": 4.0,
+  "alpha": 0.9,
+  "device": "cuda",
+  "jobs": [
+    {
+      "run_name": "teacher_resnet34_s42_20261116T041338Z_cd35d37c14_867a47",
+      "method": "teacher",
+      "model_name": "resnet34",
+      "seed": 42,
+      "checkpoint": "C:\\Users\\jacob\\Desktop\\ECE661\\ECE661_KD\\experiments\\expB\\checkpoints\\teacher_resnet34_s42_aa89a5a55c45d775.pt",
+      "checkpoint_sha256": "aa89a5a55c45d7750dc200be2af34afeca156b1b42609c15b729820ffc47d48e",
+      "best_epoch": 196,
+      "best_val_acc": 0.9624,
+      "record_sha256": "b9f3dfe4944d7989305dae34b9b041d340f54180e40840e662b77710be2a9e79"
+    },
+    {
+      "run_name": "student_ce_resnet50_seed42",
+      "method": "ce",
+      "model_name": "resnet50",
+      "seed": 42,
+      "checkpoint": "C:\\Users\\jacob\\Desktop\\ECE661\\ECE661_KD\\experiments\\expB\\checkpoints\\student_ce_resnet50_seed42.pt",
+      "checkpoint_sha256": "fffe1324feb2324f4f70d68316bc213f09678ca15ec40509f3dbad5ddc077f10",
+      "best_epoch": 186,
+      "best_val_acc": 0.961,
+      "record_sha256": "6a211cb0055b4c9b31fbf0457b5b30e076f7b1020049b872dc78fb27e14da788"
+    },
+    {
+      "run_name": "student_kd_resnet50_T4_alpha0p9_seed42",
+      "method": "kd",
+      "model_name": "resnet50",
+      "seed": 42,
+      "checkpoint": "C:\\Users\\jacob\\Desktop\\ECE661\\ECE661_KD\\experiments\\expB\\checkpoints\\student_kd_resnet50_T4_alpha0p9_seed42.pt",
+      "checkpoint_sha256": "e2282c115f619aecff18e5caaa7ed293069487427b1b0b990631dcc717ae0ba8",
+      "best_epoch": 185,
+      "best_val_acc": 0.9598,
+      "record_sha256": "3e4954151b1f0e373f31f33038f00810db1be078ac7e29efa463210dd3152470"
+    },
+    {
+      "run_name": "student_ce_resnet50_seed123",
+      "method": "ce",
+      "model_name": "resnet50",
+      "seed": 123,
+      "checkpoint": "C:\\Users\\jacob\\Desktop\\ECE661\\ECE661_KD\\experiments\\expB\\checkpoints\\student_ce_resnet50_seed123.pt",
+      "checkpoint_sha256": "68b646e95713e83a15db32dbdbf4f50dccaa8dd7892d1c7c2d0e97763fbd01cc",
+      "best_epoch": 189,
+      "best_val_acc": 0.9614,
+      "record_sha256": "5b26073771c91cc5e1e62a36bfe4089df22ccef30f200b8264bfd2157b6f7c42"
+    },
+    {
+      "run_name": "student_kd_resnet50_T4_alpha0p9_seed123",
+      "method": "kd",
+      "model_name": "resnet50",
+      "seed": 123,
+      "checkpoint": "C:\\Users\\jacob\\Desktop\\ECE661\\ECE661_KD\\experiments\\expB\\checkpoints\\student_kd_resnet50_T4_alpha0p9_seed123.pt",
+      "checkpoint_sha256": "b3a1f5ebc3b00285085c38fbd38e3fc0247e2b1b9e2a1841acd5890424ab3d2b",
+      "best_epoch": 197,
+      "best_val_acc": 0.9602,
+      "record_sha256": "470d94fdebffbdc5213f6971e58d643845d8ca71823814ed55ab45e55e1b922b"
+    },
+    {
+      "run_name": "student_ce_resnet50_seed456",
+      "method": "ce",
+      "model_name": "resnet50",
+      "seed": 456,
+      "checkpoint": "C:\\Users\\jacob\\Desktop\\ECE661\\ECE661_KD\\experiments\\expB\\checkpoints\\student_ce_resnet50_seed456.pt",
+      "checkpoint_sha256": "b087b98c53f23cb68c4a9718ea948a9c7affb63d3f2ddbbd174c2ae780502fa7",
+      "best_epoch": 189,
+      "best_val_acc": 0.958,
+      "record_sha256": "a883bad57c9bd58ce55c303319d09baa1e88d2db8394a662c520e7a8e5917c02"
+    },
+    {
+      "run_name": "student_kd_resnet50_T4_alpha0p9_seed456",
+      "method": "kd",
+      "model_name": "resnet50",
+      "seed": 456,
+      "checkpoint": "C:\\Users\\jacob\\Desktop\\ECE661\\ECE661_KD\\experiments\\expB\\checkpoints\\student_kd_resnet50_T4_alpha0p9_seed456.pt",
+      "checkpoint_sha256": "78fed37d86b7f4c7b285a57391611c61099712734a956a45013073cb355e86f6",
+      "best_epoch": 185,
+      "best_val_acc": 0.9592,
+      "record_sha256": "9b9018b43d7175713c43b0bfa3931252f643f13a89318f3705c7b0f8004e7ada"
+    }
+  ],
+  "source_sha256": {
+    "evaluate_final.py": "f3331b2e143bb3d9e406ef48293c66a5e1212d610442ebe5e43d4c7241bc2fbc",
+    "evaluate.py": "6d0f7fc54403d23445bd99a900a825cf9d00695bff924e70074b59fba8ea0666",
+    "prepare_data.py": "e94b00f4f78451034a50d067d1cccb1e997e289a41fcddfe3a9f4bcd79423e4b"
+  },
+  "metrics_source_sha256": "3553dec4abd696f09e79cf34c1f107b3ab99b2aad6840589f4256c198cdc8581"
+}

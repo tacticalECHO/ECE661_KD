@@ -1,0 +1,34 @@
+{
+  "ce": {
+    "mean_test_acc_percent": 95.60666666666667,
+    "sample_std_test_acc_pp": 0.07023769168567837
+  },
+  "kd": {
+    "mean_test_acc_percent": 95.51333333333334,
+    "sample_std_test_acc_pp": 0.07023769168568579
+  },
+  "paired": [
+    {
+      "seed": 42,
+      "kd_minus_ce_pp": -0.23999999999999577
+    },
+    {
+      "seed": 123,
+      "kd_minus_ce_pp": -0.019999999999997797
+    },
+    {
+      "seed": 456,
+      "kd_minus_ce_pp": -0.019999999999997797
+    }
+  ],
+  "mean_kd_minus_ce_pp": -0.09333333333333045,
+  "sample_std_kd_minus_ce_pp": 0.1270170592217165,
+  "teacher_test_acc": 0.9518,
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "temperature": 4.0,
+  "alpha": 0.9
+}

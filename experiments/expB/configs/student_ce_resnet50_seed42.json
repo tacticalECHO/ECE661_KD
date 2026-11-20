@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "run_name": "student_ce_resnet50_seed42",
+  "model_name": "resnet50",
+  "seed": 42,
+  "checkpoint": "checkpoints/student_ce_resnet50_seed42.pt",
+  "checkpoint_sha256": "fffe1324feb2324f4f70d68316bc213f09678ca15ec40509f3dbad5ddc077f10",
+  "completed_epochs": 200,
+  "best_epoch": 186,
+  "validation": {
+    "acc": 0.961,
+    "loss": 0.15844336931158323,
+    "n": 5000
+  },
+  "verification": "Training log, completed run record, source/config identity and checkpoint file hash; no independent inference in this review",
+  "test_evaluated": false,
+  "student_config": "configs/cifar10_student.json",
+  "student_config_sha256": "35e8c9c2bec09e73ebc8d7e6f67fb9240e649b8e3d3e893748c727479187fbd7",
+  "data": {
+    "classes": [
+      "airplane",
+      "automobile",
+      "bird",
+      "cat",
+      "deer",
+      "dog",
+      "frog",
+      "horse",
+      "ship",
+      "truck"
+    ],
+    "indices_sha256": "55ecb6cd4e1eb48274001018b26a797b833f72ae79a02b388e4874497445b43d",
+    "normalization": {
+      "mean": [
+        0.4916557112949346,
+        0.48233404786220047,
+        0.4466792311751089
+      ],
+      "std": [
+        0.24708115757171717,
+        0.24350869346103443,
+        0.26158066216751236
+      ],
+      "source": "Training subset pixels scaled to [0, 1]; population standard deviation"
+    }
+  },
+  "initial_state_sha256": "6be758008acaec1704c3fbdeec15172fabb87bd4a221244adc7bc31bce032831",
+  "first_batch_sha256": "01e86f022ad41fc7f510d7c93fa9f5a7489824ec85c9a1f44202bc16e986c78c",
+  "model_source_sha256": "2aca0a1d0376f8337fff72f145267fde6cf37c78a569a3298a5cb251e68d915b",
+  "training_source_sha256": "a256a62b4dc6201aeb1f0023e0f9751a8014f917a3c7a759c2efee9f56839523",
+  "training_utils_source_sha256": "0e9d0aba0a888be8e3f5275bc3ed516166e1d1abd9c02e8605e1cb9fd1975cca"
+}
